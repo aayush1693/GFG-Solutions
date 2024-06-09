@@ -12,11 +12,11 @@ class Solution
     //is 1 then all the cells in its ith row and jth column will become 1.
     void booleanMatrix(vector<vector<int> > &matrix)
     {
-        // code here 
-        int n= matrix.size();
-        int m= matrix[0].size();
-        vector<bool> row(n,0);
-        vector<bool> col(m,0);
+        // code here
+        int n=matrix.size();
+        int m=matrix[0].size();
+        vector<int> row(n);
+        vector<int> col(m);
         for(int i=0; i<n; i++){
             for(int j=0; j<m; j++){
                 if(matrix[i][j]==1){
@@ -25,10 +25,9 @@ class Solution
                 }
             }
         }
-        
         for(int i=0; i<n; i++){
             for(int j=0; j<m; j++){
-                if(row[i]|| col[j]){
+                if(row[i]==1 || col[j]==1){
                     matrix[i][j]=1;
                 }
             }
